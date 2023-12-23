@@ -10,8 +10,9 @@ def count_letters(text):
 
 # TODO Напишите функцию calculate_frequency
 def calculate_frequency(dict_let):
+    summy = sum(dict_let.values())
     for key in dict_let:
-        dict_let[key] = round(dict_let.get(key) / total_sym, 2)
+        dict_let[key] = round(dict_let.get(key) / summy, 2)
     return dict_let
 
 
@@ -50,10 +51,6 @@ main_str = """
 Под ним сидел, и кот учёный
 Свои мне сказки говорил.
 """
-total_sym = 0
-for c in main_str:
-    if c.isalpha():
-        total_sym += 1
 
 dict_let = count_letters(main_str)
 dict_freq = calculate_frequency(dict_let)
